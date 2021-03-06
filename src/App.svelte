@@ -4,6 +4,7 @@
   const api_key = "319574139c3d65012c05bc9d3e466609";
 
   let user = "";
+  let padding;
   let decayTimer = null;
   let widgetVisible = true;
   let displayedSong = { title: "Now", artist: "Playing" };
@@ -36,12 +37,15 @@
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
     user = urlParams.get("u");
+    padding = urlParams.get("np") ?? "true";
     setInterval(getTracks, 2000);
   });
 </script>
 
 <div
-  class="info flex flex-col items-start space-y-2 transition-opacity duration-500 {widgetVisible
+  class="{padding
+    ? 'p-2'
+    : ''} info flex flex-col items-start space-y-2 transition-opacity duration-500 {widgetVisible
     ? ''
     : 'opacity-0'}"
 >
