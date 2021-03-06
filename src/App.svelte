@@ -41,17 +41,17 @@
 </script>
 
 <div
-  class="info flex flex-col items-start space-y-2 {widgetVisible
+  class="info flex flex-col items-start space-y-2 transition-opacity duration-500 {widgetVisible
     ? ''
-    : 'hidden'}"
+    : 'opacity-0'}"
 >
-  <span class="row py-1 px-3 title transition-opacity duration-500">
+  <span class="row py-1 px-3">
     {displayedSong.title}
   </span>
-  <span class="row py-1 px-3 artist transition-opacity duration-500">
+  <span class="row py-1 px-3">
     {displayedSong.artist}
   </span>
-  <span class="row py-1 px-4 status transition-opacity duration-500">
+  <span class="row py-1 px-4">
     <span class="flex">♪</span>
   </span>
 </div>
